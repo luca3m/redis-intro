@@ -1,0 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+
+body {
+  font-family: 'Droid Serif';
+  font-size: 2em;
+}
+
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+  font-size: 3em;
+}
+
+.remark-slide-number {
+  font-size: 0.3em;
+}
