@@ -14,8 +14,6 @@ class: center, middle
 
 Luca Marturana
 
-Ex-studente UniCT
-
 Software Engineer @ A-Tono
 
 ---
@@ -23,31 +21,60 @@ Software Engineer @ A-Tono
 # Agenda
 
 1. Cos'è Redis
-2. Sotto il cofano
-3. Struttura dei dati
+2. Come funziona
 4. Esempi pratici
-5. Conclusioni
+5. Utilizzi reali
+6. Conclusioni
 
 ---
 
 # Cos'è Redis
 
-Redis è un database all in memory. Che fa pensare subito ad una cache
-ma non è così. Redis è uno storage persistente.
+Redis è un database all in memory.
+
+Che fa pensare subito ad una cache... Ma non è così.
+
+Redis è uno storage **persistente**.
 
 ---
 
-# Sotto il cofano
+# Come funziona
+
+Tutte le operazioni sui dati vengono effettuate in RAM.
+Secondariamente vengono effettuate delle copie su disco.
 
 ---
 
-# Tipi di dato
+# Vantaggi della RAM
+
+1. Le letture e le scritture hanno la stessa velocità
+2. Latenze di lettura/scrittura trascurabili
+3. Si può lavorare a singolo thread, semplificando molto il codice
 
 ---
 
-# Esempi pratici
+# Persistenza
 
-## Contatore
+Su Redis conta prima di tutto il dato in RAM, però garantisce anche la
+persistenza su disco, in due modi:
+
+1. Viene scritto un journal ogni secondo con tutte le modifiche
+2. Ogni N scritture in M tempo fa una snapshot completa della base di dati su disco
+
+---
+
+# Impieghi
+
+Redis può essere visto come una RAM condivisa.
+
+1. Cache
+2. Sistemi a code
+3. Storage configurazioni
+4. Dati a forte località temporale
+
+---
+
+# Contatore
 
 ```
 INCR contatore
@@ -55,7 +82,7 @@ INCR contatore
 
 ---
 
-## Sistema a code
+# Sistema a code
 
 Produttore:
 
@@ -69,6 +96,26 @@ Consumatore:
 BRPOP coda
 ```
 
+---
+
+# Le aziende lo usano per..
+
+* Twitter per gestire le timeline
+* Pinterest per mantenere il grafo following/followers
+* A-Tono per gestire transazioni e configurazioni nel suo gateway SMS
+
+---
+
+class: center, middle
+
+# Fine
+
+## Contatti
+
+Email: lucamarturana@gmail.com
+Twitter: [@luca3m](http://twitter.com/luca3m)
+Github: [luca3m](http://github.com/luca3m)
+Blog: [luca3m.me](http://luca3m.me)
 
     </textarea>
     <script src="js/remark-0.5.9.min.js" type="text/javascript">
