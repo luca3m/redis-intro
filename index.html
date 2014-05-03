@@ -30,18 +30,12 @@ Software Engineer @ A-Tono
 
 # Cos'è Redis
 
-Redis è un database all in memory.
+[Redis](http://redis.io) è un database all in memory. Tutte le operazioni sui dati
+vengono eseguite sulla memoria RAM.
 
 Che fa pensare subito ad una cache... Ma non è così.
 
 Redis è uno storage **persistente**.
-
----
-
-# Come funziona
-
-Tutte le operazioni sui dati vengono effettuate in RAM.
-Secondariamente vengono effettuate delle copie su disco.
 
 ---
 
@@ -67,18 +61,10 @@ persistenza su disco, in due modi:
 
 Redis può essere visto come una RAM condivisa.
 
-1. Cache
-2. Sistemi a code
-3. Storage configurazioni
-4. Dati a forte località temporale
-
----
-
-# Contatore
-
-```
-INCR contatore
-```
+1. Sistemi a code
+2. Storage configurazioni
+3. Dati a forte località temporale
+4. Cache
 
 ---
 
@@ -98,6 +84,17 @@ BRPOP coda
 
 ---
 
+# Controllo accessi
+
+```
+SET access_control 0 EX 60 NX
+INCR access_control
+```
+
+Diamo l'accesso se `access_control` è minore o uguale al massimo consentito.
+
+---
+
 # Le aziende lo usano per..
 
 * Twitter per gestire le timeline
@@ -106,15 +103,28 @@ BRPOP coda
 
 ---
 
+# Conclusioni
+
+Redis è un database fortemente diverso da tutti gli altri.
+
+Riesce in maniera unica a garantire elevate prestazioni e persistenza del dato.
+
+---
+
 class: center, middle
 
 # Fine
 
-## Contatti
+---
 
-Email: lucamarturana@gmail.com
+# Contatti
+
+Email: [lucamarturana@gmail.com](mailto:lucamarturana@gmail.com)
+
 Twitter: [@luca3m](http://twitter.com/luca3m)
+
 Github: [luca3m](http://github.com/luca3m)
+
 Blog: [luca3m.me](http://luca3m.me)
 
     </textarea>
