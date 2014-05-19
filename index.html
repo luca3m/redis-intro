@@ -41,12 +41,10 @@ Software Engineer @ A-Tono
 
 ---
 
-class: middle
-
 # What's Redis
 
-[Redis](http://redis.io) is an all in memory database. It stores all our data
-on memory.
+[Redis](http://redis.io) is a key-value database. It stores all our data
+in memory.
 
 You may say, it's a cache! But it's not true.
 
@@ -55,10 +53,8 @@ Redis is a **persistent** store.
 ---
 
 # RAM advantages
---
-1. Same speed for reads and writes
 
---
+1. Same speed for reads and writes
 2. Read/write latency is negligible
 
 ---
@@ -67,7 +63,6 @@ Redis is a **persistent** store.
 
 On Redis, clients work with RAM data, but it guarantees persistence in two ways:
 
---
 1. Every second it writes a journal with last write commands
 
 --
@@ -87,11 +82,15 @@ OK
 >
 ```
 
+???
+
+Open a redis shell and show something
+
 ---
 
 # Paradigm
 
-Strings can also contains numbers, and Redis has specific commands for
+Strings can also contain **numbers**, and Redis has specific commands for
 them:
 
 ```
@@ -108,7 +107,7 @@ OK
 
 # Paradigm
 
-Or you can use more complex data structures, like sets:
+Or you can use more complex data structures, like **sets**:
 
 ```
 > SADD myset value1 value2
@@ -155,7 +154,7 @@ SET access_count 0 EX 60 NX
 INCR access_count
 ```
 
-On *access_count* key you will find always all access per minute.
+On **access_count** key you will find always all access per minute.
 
 ---
 
@@ -169,7 +168,7 @@ On *access_count* key you will find always all access per minute.
 
 # Conclusions
 
-Redis is totally different from all other databases.
+Redis is a very interesting storage option.
 
 It ensures high performance and persistence of data in a unique way from all
 other databases.

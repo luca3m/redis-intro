@@ -21,7 +21,7 @@ h1 {
 }
 
 .remark-slide-number {
-  font-size: 0.3em;
+  display: none
 }
 
 .the_end {
