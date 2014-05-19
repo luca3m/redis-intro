@@ -7,6 +7,19 @@
   </head>
   <body>
     <textarea id="source">
+name: empty
+layout: true
+
+---
+
+name: zenslide
+layout: true
+
+.hashtag[#zenluca3m]
+
+{{content}}
+
+---
 
 class: center, middle
 
@@ -28,6 +41,8 @@ Software Engineer @ A-Tono
 
 ---
 
+class: middle
+
 # What's Redis
 
 [Redis](http://redis.io) is an all in memory database. It stores all our data
@@ -40,17 +55,22 @@ Redis is a **persistent** store.
 ---
 
 # RAM advantages
-
+--
 1. Same speed for reads and writes
+
+--
 2. Read/write latency is negligible
 
 ---
 
 # Persistency
 
-On Redis clients work with RAM data, but it guarantees persistence in two ways:
+On Redis, clients work with RAM data, but it guarantees persistence in two ways:
 
+--
 1. Every second it writes a journal with last write commands
+
+--
 2. Every N writes in M time, it makes a snapshot of all db to disk
 
 ---
@@ -71,7 +91,7 @@ OK
 
 # Paradigm
 
-Strings can also contains numbers, and Redis take has specific commands for
+Strings can also contains numbers, and Redis has specific commands for
 them:
 
 ```
@@ -107,20 +127,20 @@ Or you can use more complex data structures, like sets:
 
 1. Task queues
 2. Realtime analitics
-3. Data with huge time-locality
+3. Data with high time-locality
 4. Cache
 
 ---
 
-# Queue system
-
-Producer:
+# Task queue
+--
+Producer
 
 ```
 LPUSH queue hello
 ```
-
-Consumer:
+--
+Consumer
 
 ```
 BRPOP queue 0
@@ -151,13 +171,13 @@ On *access_count* key you will find always all access per minute.
 
 Redis is totally different from all other databases.
 
-It succeeds in a unique way to ensure high performance and persistence of data.
+It ensures high performance and persistence of data in a unique way from all
+other databases.
 
 ---
 
-class: center, middle
-
-# The end
+template: empty
+class: the_end
 
 ---
 
