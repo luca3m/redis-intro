@@ -40,7 +40,7 @@ Software Engineer @ A-Tono
 
 1. What's Redis
 2. Paradigm
-4. Some examples
+4. Examples
 5. Real use cases
 6. Conclusions
 
@@ -65,13 +65,9 @@ Redis is a **persistent** store.
 
 ---
 
-# Persistency
-
-Redis guarantees persistence in two ways:
+# Persistence
 
 1. Every second it writes an append-only file with last write commands
-
---
 2. Every N writes in M time, it makes a snapshot of all db to disk
 
 ---
@@ -116,8 +112,16 @@ OK
 > SMEMBERS myset
 1) "value1"
 2) "value2"
->
 ```
+---
+
+# Paradigm: other
+
+* Lists
+* Hashes
+* Sorted sets
+* HyperLogLog
+* Publish/Subscribe
 
 ---
 
@@ -131,11 +135,16 @@ OK
 ---
 
 # Task queue
---
+
+.center.middle[![Image](images/task-queue.svg)]
+---
+
+# Task queue
+
 Producer
 
 ```
-LPUSH queue hello
+LPUSH queue my_amazing_task
 ```
 --
 Consumer
@@ -161,7 +170,7 @@ On **access_count** key you will find always all access per minute.
 
 * Twitter uses it to store last timeline for each user
 * Pinterest uses Redis to store following/followers graph
-* A-Tono uses it to store transactions and configurations of it's SMS gateway
+* A-Tono uses it to store transactions and configurations of its SMS gateway
 
 ---
 
